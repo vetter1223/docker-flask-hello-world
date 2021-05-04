@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   flask:
-    #image: vetter1223/docker-callservice_flask
+    #image: vetter1223/docker-simple_flask
     build: ./flask
     container_name: flask
     restart: always
@@ -12,7 +12,7 @@ services:
     command: gunicorn -w 3 -b 0.0.0.0:9000 run:app
 
   nginx:
-    #image: vetter1223/docker-callservice_nginx
+    #image: vetter1223/docker-simple_nginx
     build: ./nginx
     container_name: nginx
     restart: always
