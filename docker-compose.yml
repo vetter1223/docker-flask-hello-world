@@ -3,14 +3,16 @@ version: "3.7"
 services:
 
   flask:
+    #image: vetter1223/docker-callservice_flask
     build: ./flask
     container_name: flask
     restart: always
-    ports:
-        - "8080:8080"
-    command: gunicorn -w 3 -b 0.0.0.0:8080 run:app
+    expose:
+        - "9000"
+    command: gunicorn -w 3 -b 0.0.0.0:9000 run:app
 
   nginx:
+    #image: vetter1223/docker-callservice_nginx
     build: ./nginx
     container_name: nginx
     restart: always
